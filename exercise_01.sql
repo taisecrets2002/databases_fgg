@@ -58,3 +58,6 @@ truncate table planets restart identity;
 insert into planets (ime, polmer)
 values ('merkur', '2440'), ('venera', '6052'), ('zemlja', '6378'), ('mars', '3390');
 
+--delete planets (it was a test table so we didn't destroy data in other tables we got
+
+drop table planets;
