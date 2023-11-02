@@ -44,3 +44,17 @@ values ('merkur', '2440'), ('venera', '6052'), ('zemlja', '6378'), ('mars', '339
 
 update planets set polmer = 3389 where id_planeta = 4;
 
+--deleting data
+
+truncate table planets;
+
+--adding data again id_planeta goes on from where it was left (now the id of merkur is 5 instead of 1)
+insert into planets (ime, polmer)
+values ('merkur', '2440'), ('venera', '6052'), ('zemlja', '6378'), ('mars', '3390');
+
+-- reset the serial id_planeta (so the serial starts from 1 again)
+truncate table planets restart identity;
+
+insert into planets (ime, polmer)
+values ('merkur', '2440'), ('venera', '6052'), ('zemlja', '6378'), ('mars', '3390');
+
